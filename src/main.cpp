@@ -20,7 +20,7 @@ static std::vector<std::string> recoverLevelOrder(std::filesystem::path const& f
 	if (!metaRes) {
         return std::vector<std::string>();
 	}
-    return matjson::Serialize<std::vector<std::string>>::fromJson(metaRes.unwrap()[key]);
+    return matjson::Serialize<std::vector<std::string>>::fromJson(metaRes.unwrap()[key]).unwrap();
 }
 
 static RecoveryStats recoverOldBS() {
